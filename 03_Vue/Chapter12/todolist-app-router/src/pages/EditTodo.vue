@@ -33,7 +33,7 @@ const { updateTodo } = inject('actions');
 const router = useRouter();
 const currentRoute = useRoute();
 const matchedTodoItem = todoList.value.find((item) => item.id === currentRoute.params.id);
-// 업데이트할 대상을 찾지 못했을 경우 전체 목록 페이지로 돌아감
+// 업데이트할 대상을 찾지 못했을 경우 전체 목록 페이지로 돌아감 sfdsdfsd
 if (!matchedTodoItem) {
     router.push('/todos');
 }
