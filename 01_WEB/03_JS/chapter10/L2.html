@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>버튼을 눌렀을 때 사용자가 입력한 이름 콘솔에 출력</title>
+        <script>
+            window.onload = function () {
+                // btn 버튼을 찾아와서 클릭 할 때 함수 연결
+                document.getElementById('btn').addEventListener('click', function () {
+                    // text박스를 찾아옴
+                    let name = document.getElementById('name');
+                    //  name은 html 요소이기 때문에 value로 텍스트를 가져와야함
+                    console.log(name.value);
+                });
+            };
+        </script>
+    </head>
+    <body>
+        <label for="name">이름:</label>
+        <input id="name" name="name" type="text" size="30" />
+        <input id="btn" type="button" value="전송" />
+    </body>
+</html>

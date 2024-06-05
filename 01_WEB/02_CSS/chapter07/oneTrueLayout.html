@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>flex정렬</title>
+        <style>
+            body {
+                width: 500px;
+                margin: 10px auto;
+            }
+            #middle {
+                display: flex;
+            }
+            #left {
+                width: 150px;
+                background-color: red;
+            }
+            #right {
+                width: 350px;
+                background-color: blue;
+            }
+            /* float를 left,right를 준것 모두 동일하다 width가 지정되어 있기 때문에 */
+            #top {
+                background-color: green;
+            }
+            #bottom {
+                background-color: purple;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="top">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum eveniet obcaecati laboriosam eaque blanditiis quaerat, aspernatur recusandae tempora voluptatem modi
+            doloremque maxime, quia qui eius. Hic rem totam ab! Suscipit.
+        </div>
+        <div id="middle">
+            <div id="left">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</div>
+            <div id="right">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem harum magnam cupiditate distinctio corrupti incidunt soluta deleniti. Perferendis architecto, aut
+                voluptatem optio, ut distinctio velit voluptates maxime qui officiis nobis.Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </div>
+        </div>
+        <div id="bottom">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla voluptatum illum tempora at alias delectus dolores corporis quae. Nemo eum porro id impedit accusamus
+            quae, consequatur autem ex odio blanditiis.
+        </div>
+    </body>
+</html>

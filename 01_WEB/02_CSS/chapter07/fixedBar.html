@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>fixed로 고정된 바 만들기</title>
+        <style>
+            .container {
+                margin-top: 50px;
+                margin-left: 50px;
+            }
+            /* 위에와 왼쪽 마진을 50씩 주면서 공간을 떨어뜨려서 글자가 다 보이도록 함 */
+            .top_bar {
+                background-color: red;
+                position: fixed;
+                left: 0;
+                top: 0;
+                right: 0;
+                height: 50px;
+            }
+            /* fixed를 넣으면 부포트 기준으로 고정 */
+            /* right와 left가 0인 이유는 가득차게 하기 위해서 */
+            .left_bar {
+                background-color: blue;
+                position: fixed;
+                left: 0;
+                top: 50px;
+                bottom: 0;
+                width: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="top_bar"></div>
+        <div class="left_bar"></div>
+        <div class="container">
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex debitis cumque odit explicabo molestias est rerum atque obcaecati labore harum, quas voluptates
+                tenetur, nihil corrupti provident, saepe perferendis accusamus eius!Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex debitis cumque odit explicabo
+                molestias est rerum atque obcaecati labore harum, quas voluptates tenetur, nihil corrupti provident, saepe perferendis accusamus eius!Lorem ipsum dolor sit amet
+                consectetur, adipisicing elit. Ex debitis cumque odit explicabo molestias est rerum atque obcaecati labore harum, quas voluptates tenetur, nihil corrupti provident,
+                saepe perferendis accusamus eius!Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex debitis cumque odit explicabo molestias est rerum atque obcaecati
+                labore harum, quas voluptates tenetur, nihil corrupti provident, saepe perferendis accusamus eius!
+            </p>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex debitis cumque odit explicabo molestias est rerum atque obcaecati labore harum, quas voluptates
+                tenetur, nihil corrupti provident, saepe perferendis accusamus eius!Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex debitis cumque odit explicabo
+                molestias est rerum atque obcaecati labore harum, quas voluptates tenetur, nihil corrupti provident, saepe perferendis accusamus eius!Lorem ipsum dolor sit amet
+                consectetur, adipisicing elit. Ex debitis cumque odit explicabo molestias est rerum atque obcaecati labore harum, quas voluptates tenetur, nihil corrupti provident,
+                saepe perferendis accusamus eius!Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex debitis cumque odit explicabo molestias est rerum atque obcaecati
+                labore harum, quas voluptates tenetur, nihil corrupti provident, saepe perferendis accusamus eius!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex debitis cumque odit explicabo molestias est rerum atque obcaecati labore harum, quas voluptates
+                tenetur, nihil corrupti provident, saepe perferendis accusamus eius!Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex debitis cumque odit explicabo
+                molestias est rerum atque obcaecati labore harum, quas voluptates tenetur, nihil corrupti provident, saepe perferendis accusamus eius!Lorem ipsum dolor sit amet
+                consectetur, adipisicing elit. Ex debitis cumque odit explicabo molestias est rerum atque obcaecati labore harum, quas voluptates tenetur, nihil corrupti provident,
+                saepe perferendis accusamus eius!Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex debitis cumque odit explicabo molestias est rerum atque obcaecati
+                labore harum, quas voluptates tenetur, nihil corrupti provident, saepe perferendis accusamus eius!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex debitis cumque odit explicabo molestias est rerum atque obcaecati labore harum, quas voluptates
+                tenetur, nihil corrupti provident, saepe perferendis accusamus eius!Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex debitis cumque odit explicabo
+                molestias est rerum atque obcaecati labore harum, quas voluptates tenetur, nihil corrupti provident, saepe perferendis accusamus eius!Lorem ipsum dolor sit amet
+                consectetur, adipisicing elit. Ex debitis cumque odit explicabo molestias est rerum atque obcaecati labore harum, quas voluptates tenetur, nihil corrupti provident,
+                saepe perferendis accusamus eius!Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex debitis cumque odit explicabo molestias est rerum atque obcaecati
+                labore harum, quas voluptates tenetur, nihil corrupti provident, saepe perferendis accusamus eius!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex debitis cumque odit explicabo molestias est rerum atque obcaecati labore harum, quas voluptates
+                tenetur, nihil corrupti provident, saepe perferendis accusamus eius!Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex debitis cumque odit explicabo
+                molestias est rerum atque obcaecati labore harum, quas voluptates tenetur, nihil corrupti provident, saepe perferendis accusamus eius!Lorem ipsum dolor sit amet
+                consectetur, adipisicing elit. Ex debitis cumque odit explicabo molestias est rerum atque obcaecati labore harum, quas voluptates tenetur, nihil corrupti provident,
+                saepe perferendis accusamus eius!Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex debitis cumque odit explicabo molestias est rerum atque obcaecati
+                labore harum, quas voluptates tenetur, nihil corrupti provident, saepe perferendis accusamus eius!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex debitis cumque odit explicabo molestias est rerum atque obcaecati labore harum, quas voluptates
+                tenetur, nihil corrupti provident, saepe perferendis accusamus eius!Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex debitis cumque odit explicabo
+                molestias est rerum atque obcaecati labore harum, quas voluptates tenetur, nihil corrupti provident, saepe perferendis accusamus eius!Lorem ipsum dolor sit amet
+                consectetur, adipisicing elit. Ex debitis cumque odit explicabo molestias est rerum atque obcaecati labore harum, quas voluptates tenetur, nihil corrupti provident,
+                saepe perferendis accusamus eius!Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex debitis cumque odit explicabo molestias est rerum atque obcaecati
+                labore harum, quas voluptates tenetur, nihil corrupti provident, saepe perferendis accusamus eius!
+            </p>
+        </div>
+    </body>
+</html>

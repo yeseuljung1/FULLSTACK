@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "ansi-color": "^0.2.1",
+    "lodash": "^4.17.21"
+  },
+  "name": "chapter_01",
+  "version": "1.0.0",
+  "main": "hello.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

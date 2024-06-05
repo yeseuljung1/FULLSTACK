@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>if문으로 오전 오후시간 판별</title>
+        <script>
+            // date개개체를 선언합니다 :현재 시간 측정
+            let date = new Date();
+            let hours = date.getHours();
+
+            // 조건문
+            // else 는 앞이 true이면 뒤는 체크 안한다,단 if문 2개이면 앞이 참이여도 뒤에도 확인해야한다.
+            if (hours < 12) {
+                //표현식 hours <12 가 참일때 실행합니다
+                alert('오전입니다');
+            } else {
+                // 표현식 '12<=hours'가 참일때 실행됩니다.  else는 조건문이 필요없다.
+                alert('오후입니다');
+            }
+
+            console.log(date, hours);
+        </script>
+    </head>
+    <body></body>
+</html>

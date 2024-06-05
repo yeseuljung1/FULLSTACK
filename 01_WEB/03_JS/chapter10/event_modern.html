@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>이벤트 연결 4. 이벤트 리스너 사용</title>
+        <script>
+            //이벤트를 연결합니다
+            window.onload = function () {
+                //문서 객체를 선택합니다
+                let button = document.getElementById('button');
+                // 에드이벤트리스너 (이벤트 이름, 실행 할 함수)  :해당 이벤트에 해당 함수 연결
+                button.addEventListener('click', function () {
+                    alert('click');
+                });
+            };
+        </script>
+    </head>
+    <body>
+        <a id="button" href="http://hanbit.co.kr">버튼 </a>
+    </body>
+</html>

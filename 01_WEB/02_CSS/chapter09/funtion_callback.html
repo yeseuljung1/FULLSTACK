@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>callback함수 만들기</title>
+        <script>
+            function callTenTimes(callback) {
+                // 10회 반복합니다
+                for (let i = 0; i < 10; i++) {
+                    callback();
+                }
+            }
+            // 콜백 함수를 익명으로 만들어줌
+            let fun = function () {
+                alert('함수호출');
+            };
+
+            callTenTimes(fun);
+        </script>
+    </head>
+    <body></body>
+</html>

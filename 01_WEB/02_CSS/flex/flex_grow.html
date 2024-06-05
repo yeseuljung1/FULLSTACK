@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>flex-grow</title>
+        <style>
+            .flex-container {
+                background-color: blue;
+                width: 800px;
+                height: 200px;
+                /*flex-flow: flex-direcrtion+flex-wrarp을 합친거다 */
+                display: flex;
+            }
+            .flex-item {
+                background-color: rgb(185, 244, 10);
+                width: 100px;
+                height: 100px;
+                text-align: center;
+                font-size: 30px;
+                border: 3px solid red;
+                flex-basis: 0;
+                /* flex-basis는 요소의 초기 크기(이거를 줘야 박스 안 내용물(숫자)의 크기에 상관안하고 배수로 만들어줌) */
+            }
+            .flex-item:nth-child(2) {
+                /* flex-grow:증가비율, 기본값 0(자식); */
+                flex-grow: 1;
+            }
+            .flex-item:nth-child(3) {
+                flex-grow: 3;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flex-container">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+        </div>
+    </body>
+</html>

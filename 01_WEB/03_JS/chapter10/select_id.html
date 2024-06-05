@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>dom basic</title>
+        <script>
+            // 이벤트를 연결합니다
+            window.onload = function () {
+                // 문서 객체를 선택합니다.
+                // getElementById :  요소의 id로 객체를 가져온다
+                let header = document.getElementById('header');
+                /* let header = document.querySelector('#header'); 로 대신 사용 할 수 있다 */
+                // 문서 객체를 조작합니다.
+                header.style.color = 'orange';
+                header.style.background = 'red';
+                header.innerHTML = 'From JavaScript';
+            };
+        </script>
+    </head>
+    <body>
+        <h1 id="header">Headr</h1>
+    </body>
+</html>

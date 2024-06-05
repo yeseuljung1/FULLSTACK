@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>글자 생략</title>
+        <style>
+            h1,
+            p {
+                width: 300px;
+            }
+
+            .ellipsis {
+                white-space: nowrap; /* ->공백에서는 줄바꿈 안하겠다는 태그 */
+                overflow: hidden; /* ->넘치는거 숨기는 태그 */
+                text-overflow: ellipsis; /* ->시각적으로 말줄임 표시를 나타내는 태그*/
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="ellipsis">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem laudantium assumenda pariatur rem ut maiores deleniti quae voluptatem molestiae omnis. Nisi
+            distinctio debitis minus officiis alias tempora nesciunt id obcaecati!
+        </h1>
+        <p class="ellipsis">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem laudantium assumenda pariatur rem ut maiores deleniti quae voluptatem molestiae omnis. Nisi
+            distinctio debitis minus officiis alias tempora nesciunt id obcaecati!
+        </p>
+    </body>
+</html>

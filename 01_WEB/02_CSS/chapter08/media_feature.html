@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>너비에 따른 미디어 쿼리 설정</title>
+        <style>
+            /* 스마트폰 */
+            /* 스크린이면서 너비가 767까지 일때  */
+            @media screen and (max-width: 767px) {
+                body {
+                    background-color: red;
+                }
+            }
+            /* pc */
+            /* 스크린이면서 너비가 768~959까지 일때  */
+            @media screen and (min-width: 768px) and (max-width: 959px) {
+                body {
+                    background-color: green;
+                }
+            }
+            /* desk */
+            /* 스크린이면서 너비가 960이상 일때  */
+            @media screen and (min-width: 960px) {
+                body {
+                    background-color: blue;
+                }
+            }
+            /* and 띄어쓰기 주의하기 안하면 실행 안됨 */
+        </style>
+    </head>
+    <body>
+        <h1>Lorem ipsum dolor sit amet.</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt consequatur earum quis similique reprehenderit reiciendis dolor hic debitis animi, ad aliquam ipsam nobis placeat quas quibusdam tempore voluptatibus aut vel.Lorem ipsum
+            dolor sit amet consectetur, adipisicing elit. Deserunt consequatur earum quis similique reprehenderit reiciendis dolor hic debitis animi, ad aliquam ipsam nobis placeat quas quibusdam tempore voluptatibus aut vel.vLorem ipsum dolor sit
+            amet consectetur, adipisicing elit. Deserunt consequatur earum quis similique reprehenderit reiciendis dolor hic debitis animi, ad aliquam ipsam nobis placeat quas quibusdam tempore voluptatibus aut vel.Lorem ipsum dolor sit amet
+            consectetur, adipisicing elit. Deserunt consequatur earum quis similique reprehenderit reiciendis dolor hic debitis animi, ad aliquam ipsam nobis placeat quas quibusdam tempore voluptatibus aut vel.Lorem ipsum dolor sit amet consectetur,
+            adipisicing elit. Deserunt consequatur earum quis similique reprehenderit reiciendis dolor hic debitis animi, ad aliquam ipsam nobis placeat quas quibusdam tempore voluptatibus aut vel.
+        </p>
+    </body>
+</html>

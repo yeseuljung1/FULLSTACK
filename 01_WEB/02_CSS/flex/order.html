@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>order</title>
+        <style>
+            .flex-container {
+                background-color: blue;
+                width: 800px;
+                height: 200px;
+                /*flex-flow: flex-direcrtion+flex-wrarp을 합친거다 */
+                display: flex;
+            }
+            .flex-item {
+                background-color: rgb(185, 244, 10);
+                width: 100px;
+                height: 100px;
+                text-align: center;
+                font-size: 30px;
+                border: 3px solid red;
+            }
+            .flex-item:nth-child(1) {
+                order: 17;
+                /* order는 자식한테 넣어주는 요소의 순서이다/순서가 클수록 뒤로 간다 */
+            }
+            .flex-item:nth-child(3) {
+                order: -1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flex-container">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+            <div class="flex-item">4</div>
+            <div class="flex-item">5</div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>객체에서의 this사용</title>
+        <script>
+            let person = {
+                name: '유인성',
+                eat: function (food) {
+                    // 객체 안에 있는 값에 접근 할 때 this키워드 사용
+                    alert(this.name + '이' + food + '을/를 먹습니다');
+                },
+            };
+            // 메서드(객체에 들어가는 함수)를 호출합니다.
+            // 객체의 속성을 사용할 때에는 .을 붙이거나 []안에 키값을 넣는다
+            person.eat('밥');
+        </script>
+    </head>
+    <body></body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>전환효과</title>
+        <style>
+            div {
+                width: 100px;
+                height: 100px;
+                background-color: pink;
+                /* transition: width 0.5s, background-color 2s; */
+                transition: 1s 0.5s;
+            }
+            div:hover {
+                width: 300px;
+                background-color: purple;
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+    </body>
+</html>
+
+<!--    transition-property:속성명
+        transition-duration: 지속시간(필수속성)
+        transition-timing-function: 타이밍 함수
+        transition-delay:대기시간(몇초 후에 도착할건지)
+     -->

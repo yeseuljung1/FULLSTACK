@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@media 사용해서 미디어 쿼리 적용하기</title>
+        <style>
+            /* 기본화면 */
+            @media screen {
+                body {
+                    background-color: red;
+                }
+            }
+            /* 인쇄될 때의 화면 */
+            @media print {
+                body {
+                    background-color: green;
+                }
+            }
+            /* @media는 선택자가 아니기 때문에 안에 바디를 넣어줘야한다 */
+        </style>
+    </head>
+    <body>
+        <body>
+            <h1>Lorem ipsum dolor sit amet</h1>
+            <p>
+                Lorem ipsum dolor sit amet , consectetur adipiscing elit . Nulla viverra ex a augue porta, quis luctus eros sollicitudin . Nullam in turpis semper, lacinia justo a,
+                facilisis lacus . Nunc odio nisi, lobortis sit amet diam et, vestibulum posuere risus . Donec viverra , risus a ultricies fringilla , lectus purus aliquet quam ,
+                sit amet commodo nisl mi vitae nunc ....
+            </p>
+        </body>
+    </body>
+</html>
