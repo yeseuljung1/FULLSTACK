@@ -34,37 +34,28 @@
         </div>
         <!-- ---------------------------------------------------------- -->
         <div v-if="selectedDate">
-            <h2>{{ selectedDate }}의 수입 및 지출 내역</h2>
-            <ul>
-                <li v-for="(transaction, index) in transactionsByDate" :key="index">
-                    {{ transaction.type === 'income' ? '수입' : '지출' }}:
-                    {{ transaction.amount }}
-                    <button @click="editTransaction(index)">편집</button>
-                    <button @click="deleteTransaction(index)">삭제</button>
-                </li>
-            </ul>
-        </div>
-        <!-- ---------------------------------------------------------- -->
-        <div>
-            <label for="amount">금액:</label>
-            <input v-model.number="amount" type="number" id="amount" />
-            <label for="type">유형:</label>
-            <select v-model="type" id="type">
-                <option value="income">수입</option>
-                <option value="expense">지출</option>
-            </select>
-        </div>
-        <div v-if="type === 'income'">
-            <label>수입 카테고리:</label>
-            <button v-for="category in incomeCategories" :key="category" @click="setCategory(category)">
-                {{ category }}
-            </button>
-        </div>
-        <div v-if="type === 'expense'">
-            <label>지출 카테고리:</label>
-            <button v-for="category in expenseCategories" :key="category" @click="setCategory(category)">
-                {{ category }}
-            </button>
+            <h2>{{ selectedDate }}에 거래 추가하기</h2>
+            <div>
+                <label for="amount">금액:</label>
+                <input v-model.number="amount" type="number" id="amount" />
+                <label for="type">유형:</label>
+                <select v-model="type" id="type">
+                    <option value="income">수입</option>
+                    <option value="expense">지출</option>
+                </select>
+            </div>
+            <div v-if="type === 'income'">
+                <label>수입 카테고리:</label>
+                <button v-for="category in incomeCategories" :key="category" @click="addTransaction(category)">
+                    {{ category }}
+                </button>
+            </div>
+            <div v-if="type === 'expense'">
+                <label>지출 카테고리:</label>
+                <button v-for="category in expenseCategories" :key="category" @click="addTransaction(category)">
+                    {{ category }}
+                </button>
+            </div>
         </div>
         <!-- ---------------------------------------------------------- -->
         <h2>전체 총 수입: {{ totalIncome }}</h2>
@@ -85,6 +76,7 @@ export default {
             selectedDate: null,
             amount: 0,
             type: 'income',
+            selectedCategory: null,
             editIndex: -1,
             incomeCategories: ['용돈', '주식', '월급'],
             expenseCategories: ['미용', '병원', '교통'],
@@ -135,47 +127,22 @@ export default {
                 this.selectedDate = `${this.year}-${String(this.month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
             }
         },
-        addTransaction() {
-            if (this.selectedDate) {
-                if (this.editIndex >= 0) {
-                    this.transactions[this.selectedDate][this.editIndex] = {
-                        amount: this.amount,
-                        type: this.type,
-                    };
-                    this.editIndex = -1;
-                } else {
-                    if (!this.transactions[this.selectedDate]) {
-                        this.transactions[this.selectedDate] = [];
-                    }
-                    this.transactions[this.selectedDate].push({
-                        amount: this.amount,
-                        type: this.type,
-                    });
+        addTransaction(category) {
+            if (this.selectedDate && this.amount > 0) {
+                if (!this.transactions[this.selectedDate]) {
+                    this.transactions[this.selectedDate] = [];
                 }
+                this.transactions[this.selectedDate].push({
+                    amount: this.amount,
+                    type: this.type,
+                    category: category,
+                });
                 this.amount = 0;
-                this.type = 'income';
                 this.generateCalendar(); // 달력을 다시 생성하여 거래 내역 업데이트
             }
         },
-        editTransaction(index) {
-            const transaction = this.transactionsByDate[index];
-            this.amount = transaction.amount;
-            this.type = transaction.type;
-            this.editIndex = index; // 편집할 인덱스 설정
-        },
-        deleteTransaction(index) {
-            this.transactions[this.selectedDate].splice(index, 1);
-            if (this.transactions[this.selectedDate].length === 0) {
-                delete this.transactions[this.selectedDate];
-            }
-            this.generateCalendar(); // 달력을 다시 생성하여 거래 내역 업데이트
-        },
         calculateTotal(transactions, type) {
             return transactions.filter((transaction) => transaction.type === type).reduce((sum, transaction) => sum + transaction.amount, 0);
-        },
-        setCategory(category) {
-            this.selectedCategory = category;
-            this.addTransaction();
         },
     },
     mounted() {
@@ -276,4 +243,3 @@ button:hover {
     color: #000001;
 }
 </style>
-s
