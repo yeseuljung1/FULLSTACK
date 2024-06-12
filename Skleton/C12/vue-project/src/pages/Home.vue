@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <h1>달력 및 가계부</h1>
-        <!-- 연도와 월 선택 -->
+        <!-- 상단 바 -->
         <div id="header">
             <div class="selection">
                 <label for="year">연도:</label>
@@ -16,9 +16,14 @@
             <button @click="generateCalendar">달력 생성</button>
         </div>
 
+        <!-- 달력 타이틀과 네비게이션 버튼 -->
+        <div class="calendar-header">
+            <h2>{{ year }}년 {{ month }}월</h2>
+            <button class="nav-button" @click="navigateToOtherPage">다른 페이지로 이동</button>
+        </div>
+
         <!-- 달력 -->
         <div v-if="days.length">
-            <h2>{{ year }}년 {{ month }}월</h2>
             <div class="calendar">
                 <!-- 요일 헤더 -->
                 <div class="day-header" v-for="day in dayNames" :key="day">
@@ -151,12 +156,18 @@ export default {
         calculateTotal(transactions, type) {
             return transactions.filter((transaction) => transaction.type === type).reduce((sum, transaction) => sum + transaction.amount, 0);
         },
+        navigateToOtherPage() {
+            // 페이지 이동 로직을 여기서 정의합니다.
+            // 예를 들어, 다른 경로로 이동하고자 할 때:
+            window.location.href = '다른페이지.html';
+        },
     },
     mounted() {
         this.generateCalendar();
     },
 };
 </script>
+
 <style>
 html,
 body {
@@ -188,7 +199,7 @@ button {
     color: rgb(224, 255, 220);
     background-color: rgb(9, 5, 54);
     border-radius: 10px;
-    padding: 10px 20px;
+    padding: 8px 16px; /* 버튼 크기 조정 */
     border: none;
     cursor: pointer;
     font-size: 14px; /* 버튼 폰트 크기 조정 */
@@ -197,6 +208,37 @@ button {
 button:hover {
     background-color: #16c5ff;
     color: #000001;
+}
+
+/* 네비게이션 버튼 */
+.nav-button {
+    font-size: 12px;
+    padding: 5px 10px;
+    background-color: #ff9800;
+    border-radius: 5px;
+    margin-left: 20px; /* 달력 타이틀과의 간격 조정 */
+}
+
+.nav-button:hover {
+    background-color: #ffa726;
+}
+
+/* 달력 타이틀과 네비게이션 버튼 컨테이너 */
+.calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 타이틀을 중앙 정렬 */
+    margin-top: 20px;
+}
+
+.calendar-header h2 {
+    margin: 0;
+    flex-grow: 1; /* 제목이 가능한 공간을 차지하게 함 */
+    text-align: left; /* 제목을 왼쪽으로 정렬 */
+}
+
+.calendar-header .nav-button {
+    flex-shrink: 0; /* 버튼이 제목 옆에 고정되도록 함 */
 }
 
 /* 전체 달력 컨테이너 */
@@ -253,18 +295,17 @@ button:hover {
     margin-bottom: 20px;
 }
 
-#header .left {
-    display: flex;
-    align-items: center;
+#header .selection {
     margin-right: 20px; /* 왼쪽에 여백 추가 */
 }
 
-#header .left label {
+#header label {
     margin-right: 10px;
 }
 
-#header .right select {
-    margin-left: 10px;
+#header select,
+#header input {
+    padding: 5px; /* 월 선택과 연도 입력 크기 조정 */
 }
 
 .total-wrapper {
