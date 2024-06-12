@@ -1,22 +1,56 @@
-<template>
-    <li :class="todoItem.done ? 'list-group-item list-group-item-success' : 'list-group-item'">
-        <span :class="todoItem.done ? 'todo-done pointer' : 'pointer'" @click="toggleDone(todoItem.id)">
-            {{ todoItem.todo }}
-            {{ todoItem.done ? '(완료)' : '' }}
-        </span>
-        <span class="float-end badge bg-secondary pointer m-1" @click="router.push(`/todos/edit/${todoItem.id}`)"> 편집</span>
-        <span class="float-end badge bg-secondary pointer m-1" @click="deleteTodo(todoItem.id)"> 삭제</span>
-    </li>
+<!-- <template>
+    <div class="todo-list">
+        <h2>수입 리스트</h2>
+        <button @click="router.push('/income')">할일 추가</button>
+        <button @click="router.push('/expenditure')">새로 고침</button>
+        <ul>
+            <li v-for="income in incomeList" :key="income.id">
+                {{ income.date }} - {{ income.amount }} - {{ income.source }} -
+                {{ income.memo }}
+                <button @click="deleteIncome(income.id)">삭제</button>
+                <button @click="editIncome(income.id)">편집</button>
+            </li>
+        </ul>
+    </div>
 </template>
 
 <script setup>
+import { ref, inject } from 'vue';
 import { useRouter } from 'vue-router';
-import { inject } from 'vue';
-
-defineProps({
-    todoItem: { Type: Object, required: true },
-});
+import axios from 'axios';
 
 const router = useRouter();
-const { deleteTodo, toggleDone } = inject('actions');
+const incomeList = inject('incomeList'); // 상태 주입
+
+const fetchIncomes = async () => {
+    try {
+        const response = await axios.get('http://localhost:3000/incomes');
+        incomeList.value = response.data;
+    } catch (error) {
+        console.error('Error fetching incomes:', error);
+    }
+};
+
+const deleteIncome = async (id) => {
+    try {
+        await axios.delete(`http://localhost:3000/incomes/${id}`);
+        incomeList.value = incomeList.value.filter((income) => income.id !== id);
+    } catch (error) {
+        console.error('Error deleting income:', error);
+    }
+};
+
+const editIncome = (id) => {
+    router.push(`/income/${id}`);
+};
+
+// 컴포넌트가 마운트될 때 데이터를 가져옵니다.
+fetchIncomes();
 </script>
+
+<style scoped>
+.todo-list {
+    padding: 20px;
+}
+</style>
+ -->

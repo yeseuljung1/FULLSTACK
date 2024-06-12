@@ -34,7 +34,7 @@
                     {{ day }}
                 </div>
                 <!-- 각 날짜 -->
-                <div class="day" v-for="(day, index) in days" :key="index" @click="selectDay(day.date)">
+                <div class="day" :class="{ 'selected-day': isSelected(day.date) }" v-for="(day, index) in days" :key="index" @click="selectDay(day.date)">
                     <div>{{ day.date }}</div>
                     <div v-if="day.date">
                         <div>수입: {{ day.incomeTotal }}</div>
@@ -165,6 +165,9 @@ export default {
         calculateTotal(transactions, type) {
             return transactions.filter((transaction) => transaction.type === type).reduce((sum, transaction) => sum + transaction.amount, 0);
         },
+        isSelected(date) {
+            return this.selectedDate === `${this.year}-${String(this.month).padStart(2, '0')}-${String(date).padStart(2, '0')}`;
+        },
         goToInOut() {
             this.$router.push({ path: '/InOut' });
         },
@@ -254,9 +257,8 @@ button:hover {
 
 /* 선택된 날짜 */
 .selected-day {
-    background-color: rgb(176, 244, 255);
+    background-color: rgb(99, 234, 255);
     color: #ffffff;
-    border-radius: 50%;
 }
 
 /* 날짜가 비어있는 경우 */
