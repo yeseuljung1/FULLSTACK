@@ -1,0 +1,127 @@
+/* main.css */
+
+/* 기존 스타일 유지 */
+body {
+  font-family: 'Pretendard Variable', Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI',
+    'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #b7c4cf; /* 새로운 컬러 사용 */
+  color: #eee3cb; /* 새로운 컬러 사용 */
+  background-image: url('@/assets/chestnut.png');
+  background-repeat: repeat;
+  background-size: cover;
+  filter: brightness(0.9) saturate(0.8); /* 밝기와 채도 조절 */
+}
+
+.title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20pt;
+}
+
+.todo-done {
+  text-decoration: line-through;
+}
+
+.container {
+  padding: 20px; /* 패딩 조절 */
+  background-color: #eee3cb; /* 새로운 컬러 사용 */
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 20px auto; /* 가운데 정렬 */
+}
+
+.panel-borderless {
+  border: 0;
+  box-shadow: none;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+/* 추가 스타일 */
+header {
+  background-color: #eee3cb; /* 새로운 컬러 사용 */
+  position: relative; /* 수정: absolute -> relative */
+  color: #967e76;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+}
+
+header .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #967e76; /* 수정: #eee3cb -> #967e76 */
+  padding: 5px 10px;
+}
+
+.navHome:hover,
+.navCardRecommendation:hover,
+.navInOut:hover,
+.navListView:hover,
+.navChallenge:hover {
+  background-color: #d7c0ae; /* 새로운 컬러 사용 */
+  color: #967e76; /* 새로운 컬러 사용 */
+  border-radius: 5px;
+}
+
+.navHome:active,
+.navHome:focus,
+.navCardRecommendation:active,
+.navCardRecommendation:focus,
+.navInOut:active,
+.navInOut:focus,
+.navListView:active,
+.navListView:focus,
+.navChallenge:active,
+.navChallenge:focus {
+  background-color: #d7c0ae; /* 새로운 컬러 사용 */
+  outline: none;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-size: cover;
+  padding: 40px;
+}
+
+.summary {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  background-color: rgba(238, 227, 203, 0.9); /* 새로운 컬러 사용 */
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.summary div {
+  background-color: #b7c4cf; /* 새로운 컬러 사용 */
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  width: 30%;
+}
