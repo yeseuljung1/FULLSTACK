@@ -1,6 +1,6 @@
 package ch06.sec07.exam02;
 
-public class Korea {
+public class  Korea {
 //    필드선언
     String nation = "대한민국";
     String name;

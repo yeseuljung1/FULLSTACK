@@ -1,6 +1,6 @@
 package ch06.sec06.exam01;
 
-public class CarExample {
+public class  CarExample {
     public static void main(String[] args) {
 //        Car객체 생성
         Car myCar = new Car();
