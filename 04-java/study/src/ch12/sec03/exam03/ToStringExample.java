@@ -1,4 +1,3 @@
-/*
 package ch12.sec03.exam03;
 
 public class ToStringExample {
@@ -10,4 +9,4 @@ public class ToStringExample {
         System.out.println(strObj);
         System.out.println(myPhone);
     }
-}*/
+}
