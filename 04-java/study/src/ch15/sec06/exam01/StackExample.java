@@ -8,11 +8,15 @@ public class StackExample
 //Stack 컬렉션 생성
         Stack<Coin> coinBox = new Stack<Coin>();
 //동전 넣기
+        
+//        stack은 한쫏이 막혀있는 박스라고 생각한다
+//        아래쪽부터 차곡차곡 쌓인다
         coinBox.push(new Coin(100));
         coinBox.push(new Coin(50));
         coinBox.push(new Coin(500));
         coinBox.push(new Coin(10));
 //동전을 하나씩 꺼내기
+//        lifo이기 때문에 마지막에 넣은 10원부터 출력된다
         while(!coinBox.isEmpty()) {
             Coin coin = coinBox.pop();
             System.out.println("꺼내온 동전 : " + coin.getValue() + " 원");
