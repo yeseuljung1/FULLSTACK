@@ -107,3 +107,5 @@ SELECT * FROM city WHERE countryCode = 'KOR' ORDER BY population DESC LIMIT 10;
 
 -- city 테이블에서 국가 코드가 'KOR'이고, 인구가 100만 이상 500만 이하인 도시를 찾으세요
 SELECT * FROM city WHERE countryCode = 'KOR' AND population BETWEEN 1000000 AND 5000000;
+
+
