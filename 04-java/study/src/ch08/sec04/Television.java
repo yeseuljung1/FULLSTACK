@@ -4,7 +4,7 @@ package ch08.sec04;
 public class Television implements RemoteControl {
     // 필드
     private int volume;
-
+    
     // 인터페이스 추상 메소드 오버라이딩
     @Override
     public void turnOn() {
