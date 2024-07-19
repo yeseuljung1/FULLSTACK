@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+*{margin:0;padding:0}
+li{list-style:none;}
+a{text-decoration:none;color:inherit}
+.clearfix::after{content:"";display:block;clear:both;}
+
+
+#header{width: 1200px;height: 100px;margin:0 auto}
+/* (margin:0 auto->중앙정렬이 시험 조건이라서) */
+
+#logo{width: 200px;height: 40px;float: left;margin-top:30px}/* (로고는 보통 200.40이다) */
+
+#menu{float:right;margin-top:30px;}
+
+#menu li{width: 150px;height: 40px;
+         float: left;
+         background-color:#123456;
+         color:white;
+         font-size:20px;
+         font-weight:bold;
+         text-align: center;
+         line-height: 40px;}
+
+.submenu{position: relative;z-index:10;display:none;}/* (position: relative;z-index는 서브메뉴가 강제로 앞에 보이게 하기 위해서 두개 작성) */
+
+#menu li:hover{background-color:aqua;}
+/* ---------------------------------------------------------------------- */
+#slide{width: 1200px;height: 300px;margin:0 auto}
+
+#slide li{width: 1200px;height: 300px;position:absolute;
+       display:none;}/* (position:absolute->이미지를 다 겹치는 속성/한곳에 합쳤다가 하나씩 보여야함) */
+
+#slide li:nth-of-type(1){display:block;}
+/* ---------------------------------------------------------------------- */
+#contents{width: 1200px;height: 200px;;margin:0 auto}
+
+#con1 h3{width: 100px;height: 40px;text-align: center;line-height:40px;float: left;}
+#con1 .on{background-color:#333333;color:white;}
+
+#con1,#con2,#con3{width: 400px;height: 200px;float: left;}
+
+#con1 ul{clear:both;}/* ->이러면 공지사항 밑에 글씨가 제대로 배치됨 */
+#con1 li{line-height:32px;}/* ->공지사항 밑에 글씨의 간격 조절 */
+
+#con2 h3, #con3 h3{width: 100px;height: 40px;   
+                   background-color: #333333;
+                   color:white;
+                   text-align: center;
+                   line-height:40px;}
+
+#con2 img , #con3 img{width:400px;height:160px;}
+
+
+#gal{clear:both;display:none;}
+#gal div{width: 120px;height: 160px;float:left;margin-left:20px;}/* ->여백계산해서 작성 */
+#gal div:nth-of-type(1){margin-left:0px;}
+#gal img{width: 120px;height: 160px;}
+
+/* ---------------------------------------------------------------------- */
+#footer{width: 1200px;height: 100px;margin:0 auto;}
+
+#flogo{width: 200px;height: 100px;float: left;}
+#flogo img{width: 200px;height: 40px;margin-top:30px;}
+
+#fmenu{width: 1000px;height: 50px;float: left;}
+#fmenu li{width:200px;height:50px;float:left;text-align:center;line-height:50px;}
+
+#copy{width: 1000px;height: 50px;float: left;
+       text-align:center;line-height:50px;}
+/* -----------------------------modal----------------------------------------- */
+#modal{width: 400px;height: 400px;background-color:white;
+       border:5px solid black;
+       position: absolute;
+       left:50%;
+       top:150px;
+       margin-left:-200px;
+       display:none;}
+
+#modal h3{height: 100px;border-bottom:5px solid black;
+          text-align: center;line-height:100px; 
+          font-size: 30px; }
+
+#modal div{width: 120px;height: 50px;
+           background-color:pink;text-align: center;
+           margin:150px auto;
+           cursor:pointer;
+           border:2px solid black;}
