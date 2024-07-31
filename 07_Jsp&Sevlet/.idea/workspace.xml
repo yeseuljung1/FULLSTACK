@@ -1,41 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ff548348-e371-4bda-bb37-2d97af57b06b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/dynamic-web/src/main/java/dynamicweb/dynamicweb/Hello2Servlet.java" afterDir="false" />
+    <list default="true" id="020ce95e-070e-482d-867d-b6c416ea4e4a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ex02/.idea/webContexts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex02/src/main/webapp/WEB-INF/main.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex02/src/main/webapp/action/header.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex02/src/main/webapp/action/main2.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex02/src/main/webapp/copyrigght.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex02/src/main/webapp/count.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex02/src/main/webapp/count_view.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex02/src/main/webapp/currentTime.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex02/src/main/webapp/exception/divide,jsp.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex02/src/main/webapp/exception/error.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex02/src/main/webapp/loginInfo.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex02/src/main/webapp/out.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex02/src/main/webapp/request.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex02/src/main/webapp/session/login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex02/src/main/webapp/session/loginForm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex02/src/main/webapp/session/logininfo.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex02/src/main/webapp/session/logout.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../03_Vue/GROUP-PROJECT-main/GROUP-PROJECT" beforeDir="false" afterPath="$PROJECT_DIR$/../03_Vue/GROUP-PROJECT-main/GROUP-PROJECT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../08_Spring/ScoulaTodo/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../08_Spring/ScoulaTodo/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/07_Jsp&amp;Sevlet.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex02/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ex02/.idea/gradle.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileEditorManager">
+    <leaf ideFingerprint="2dg1o4ix4nvjr">
+      <file current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.gradle">
+          <provider editor-type-id="text-editor" selected="true">
+            <state relative-caret-position="148">
+              <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dynamicweb/dynamicweb/HelloServlet.java">
+          <provider editor-type-id="text-editor" selected="true">
+            <state relative-caret-position="210">
+              <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+              <folding>
+                <element signature="e#276#277#0" expanded="true" />
+                <element signature="e#316#317#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file>
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+          <provider editor-type-id="text-editor" selected="true" />
+        </entry>
+      </file>
+      <file current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+          <provider editor-type-id="text-editor" selected="true">
+            <state relative-caret-position="63">
+              <caret line="3" column="10" selection-start-line="3" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
-  <component name="ProjectId" id="2jjIuDTjyeUTRMPk5YoQ5DYplmv" />
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="alwaysUpdateSnapshots" value="false" />
+        <option name="checksumPolicy" value="NOT_SET" />
+        <option name="customMavenHome" />
+        <option name="emulateTerminal" value="false" />
+        <option name="failureBehavior" value="NOT_SET" />
+        <option name="localRepository" value="" />
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+        <option name="mavenHomeTypeForPersistence" value="BUNDLED3" />
+        <option name="nonRecursive" value="false" />
+        <option name="outputLevel" value="INFO" />
+        <option name="printErrorStackTraces" value="false" />
+        <option name="showDialogWithAdvancedSettings" value="false" />
+        <option name="threads" />
+        <option name="useMavenConfig" value="true" />
+        <option name="userSettingsFile" value="" />
+        <option name="workOffline" value="false" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="autoDetectCompiler" value="true" />
+        <option name="createModulesForAggregators" value="true" />
+        <option name="dedicatedModuleDir" value="" />
+        <option name="dependencyTypes" value="jar, test-jar, maven-plugin, ejb, ejb-client, jboss-har, jboss-sar, war, ear, bundle" />
+        <option name="downloadAnnotationsAutomatically" value="false" />
+        <option name="downloadDocsAutomatically" value="false" />
+        <option name="downloadSourcesAutomatically" value="false" />
+        <option name="excludeTargetFolder" value="true" />
+        <option name="generatedSourcesFolder" value="AUTODETECT" />
+        <option name="importAutomatically" value="false" />
+        <option name="jdkForImporter" value="#USE_PROJECT_JDK" />
+        <option name="keepSourceFolders" value="true" />
+        <option name="lookForNested" value="false" />
+        <option name="updateFoldersOnImportPhase" value="process-resources" />
+        <option name="useMavenOutput" value="true" />
+        <option name="vmOptionsForImporter" value="" />
+        <option name="workspaceImportEnabled" value="true" />
+        <option name="workspaceImportForciblyTurnedOn" value="false" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2juZ49F3gYf9HFL2CcXlTTpT3vQ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\student\Desktop\KB_FULLSTACK\07_Jsp&amp;Sevlet\ex02\src\test" />
-    </key>
-  </component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -47,12 +147,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ff548348-e371-4bda-bb37-2d97af57b06b" name="Changes" comment="" />
-      <created>1721894281458</created>
+      <changelist id="020ce95e-070e-482d-867d-b6c416ea4e4a" name="Changes" comment="" />
+      <created>1722238729275</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1721894281458</updated>
-      <workItem from="1721894282890" duration="46000" />
+      <updated>1722238729275</updated>
+      <workItem from="1722238730287" duration="77000" />
+      <workItem from="1722238813009" duration="63000" />
     </task>
     <servers />
   </component>
