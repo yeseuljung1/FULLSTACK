@@ -4,9 +4,13 @@ import lombok.extern.log4j.Log4j;
 import org.scoula.dto.SampleDTO;
 import org.scoula.dto.SampleDTOList;
 import org.scoula.dto.TodoDTO;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.http.HttpHeaders;
 import java.util.ArrayList;
 
 @Controller //bean 등록 +Controller명시
@@ -82,7 +86,56 @@ public String ex04(SampleDTO dto, @ModelAttribute("page") int page) {
     return "sample/ex04";
 }
 
-}
+    @GetMapping("/ex05")
+    public void ex05() {
+        log.info("/ex05........");
+    }
+
+    @GetMapping("/ex06")
+//    http://localhost:8080/sample/ex06-2?name=AAA&age=10 로 리다이렉트함
+//    리다이렉트 시 요청 파라미터로 name과 age를 추가해준다
+    public String ex06(RedirectAttributes ra) {
+        log.info("/ex06........");
+        ra.addAttribute("name", "AAA");
+        ra.addAttribute("age", 10);
+        return "redirect:/sample/ex06-2";
+    }
+//    http://localhost:8080/sample/ex07
+//    ResponseBody 어노테이션은 반환된 객체가 json 형식으로 변환되어 보여지도록 한다
+    @GetMapping("/ex07")
+    public
+    @ResponseBody SampleDTO ex07() {
+        log.info("/ex07........");
+        SampleDTO dto = new SampleDTO();
+        dto.setAge(10);
+        dto.setName("홍길동");
+        return dto;
+    }
+//http://localhost:8080/sample/ex08
+    @GetMapping("/ex08")
+    public ResponseEntity<String> ex08() {
+        log.info("/ex08..........");
+// {"name": "홍길동"}
+        String msg = "{\"name\": \"홍길동\"}";
+        HttpHeaders header = new HttpHeaders();
+        header.add("Content-Type", "application/json;charset=UTF-8");
+        return new ResponseEntity<>(msg, header, HttpStatus.OK);
+    }
+
+    @GetMapping("/exUpload")
+    public void exUpload() {
+        log.info("/exUpload..........");
+    }
+
+    @PostMapping("/exUploadPost")
+    public void exUploadPost(ArrayList<MultipartFile> files) {
+        for (MultipartFile file : files) {
+            log.info("----------------------------------");
+            log.info("name:" + file.getOriginalFilename());
+            log.info("size:" + file.getSize());
+        }
+    }
+ }
 
 
 
