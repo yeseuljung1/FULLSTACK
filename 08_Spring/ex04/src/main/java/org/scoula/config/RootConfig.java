@@ -14,10 +14,18 @@ import javax.sql.DataSource;
 @PropertySource({"classpath:/application.properties"})
 
 public class RootConfig {
-    @Value("${jdbc.driver}") String driver;
-    @Value("${jdbc.url}") String url;
-    @Value("${jdbc.username}") String username;
-    @Value("${jdbc.password}") String password;
+    @Value("${jdbc.driver}")
+    private String driver;
+
+    @Value("${jdbc.url}")
+    private String url;
+
+    @Value("${jdbc.username}")
+    private String username;
+
+    @Value("${jdbc.password}")
+    private String password;
+
     @Bean
     public DataSource dataSource() {
         HikariConfig config = new HikariConfig();
