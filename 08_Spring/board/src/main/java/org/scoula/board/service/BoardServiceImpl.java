@@ -54,5 +54,6 @@ public class BoardServiceImpl implements BoardService {
         log.info("delete...." + no);
         return mapper.delete(no) == 1;
     }
+
 }
 
