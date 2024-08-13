@@ -14,6 +14,6 @@ public class HomeController {
     @GetMapping("/")
     public String home() {
         log.info("===============> HomeController/");
-        return "board/list";
+        return "redirect:/board/list";
     }
 }

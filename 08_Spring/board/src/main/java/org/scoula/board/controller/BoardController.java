@@ -18,12 +18,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class BoardController {
     final private BoardService service;
 
+
+
     @GetMapping("/list")
     public void list(Model model) {
         log.info("list");
         model.addAttribute("list", service.getList());
     }
-    @PostMapping
+
+    @GetMapping("/create")
+    public void create() {
+        log.info("create");
+    }
+
+    @PostMapping("/create")
     public String create(BoardDTO board) {
         log.info("create"+ board);
 

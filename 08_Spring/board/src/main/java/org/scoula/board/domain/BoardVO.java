@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -17,6 +18,12 @@ public class BoardVO {
     private String title;
     private String content;
     private String writer;
+
+    // 첨부 파일
+    private List<BoardAttachmentVO> attaches;
+
     private Date regDate;
     private Date updateDate;
+
+
 }
