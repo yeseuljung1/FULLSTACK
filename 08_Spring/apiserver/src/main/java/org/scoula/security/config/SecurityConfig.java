@@ -6,15 +6,22 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.csrf.CsrfFilter;
+import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.filter.CharacterEncodingFilter;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
+
 
 @Configuration
 @EnableWebSecurity  //모든 페이지에서 자동으로 인증을 하도록 설정
@@ -31,30 +38,40 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
+    // AuthenticationManager 빈 등록
+    @Bean
+    public AuthenticationManager authenticationManager() throws Exception {
+        return super.authenticationManager();
+    }
+
+    // cross origin 접근 허용
+//    다양한 도메인에서 서버에 요청을 보낼 수 있다
+    @Bean
+    public CorsFilter corsFilter() {
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        CorsConfiguration config = new CorsConfiguration();
+//        자격증명(쿠키,인증헤더 등) 을 포함한 요청을 허용하도록 설정
+        config.setAllowCredentials(true);
+//        모든 도메인에서 오는 요청허용(*운 모두라는 의미)
+        config.addAllowedOriginPattern("*");
+//        모든 헤더 허용
+        config.addAllowedHeader("*");
+        config.addAllowedMethod("*");
+        source.registerCorsConfiguration("/**", config);
+//        설정된 소스 기반으로 새로운 CorsFilter반환
+        return new CorsFilter(source);
+    }
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
+
+        // 한글 인코딩 필터 설정
         http.addFilterBefore(encodingFilter(), CsrfFilter.class);
-// 경로별 접근 권한 설정
-            http.authorizeRequests()
-                    .antMatchers("/security/all").permitAll()
-                    .antMatchers("/security/admin").access("hasRole('ROLE_ADMIN')")
-                    .antMatchers("/security/member").access("hasRole('ROLE_MEMBER')");
+        http.httpBasic().disable() // 기본 HTTP 인증 비활성화
+                .csrf().disable() // CSRF 비활성화
+                .formLogin().disable() // formLogin 비활성화 관련 필터 해제
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS); // 세션 생성 모드 설정
 
-            http.formLogin(); // form 기반 로그인 활성화, 나머지는 모두 디폴트
-//
-//        http.addFilterBefore(encodingFilter(), CsrfFilter.class);
-
-        http.formLogin()
-                .loginPage("/security/login")
-                .loginProcessingUrl("/security/login")
-                .defaultSuccessUrl("/");
-
-        http.logout() // 로그아웃 설정 시작
-                .logoutUrl("/security/logout") // POST: 로그아웃 호출 url
-                .invalidateHttpSession(true) // 세션 invalidate
-                .deleteCookies("remember-me", "JSESSION-ID") // 삭제할 쿠키 목록
-                .logoutSuccessUrl("/security/logout"); // GET: 로그아웃 이후 이동할 페이지
     }
 
     @Override
@@ -65,18 +82,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .userDetailsService(userDetailsService)
                 .passwordEncoder(passwordEncoder());
 
-        log.info("configure .........................................");
-//        auth.inMemoryAuthentication()
-//                .withUser("admin")
-////                .password("{noop}1234")
-//                .password("46e39f78-324c-4e76-a73b-4341ed70ce74")
-//                .roles("ADMIN","MEMBER"); // ROLE_ADMIN
-//        auth.inMemoryAuthentication()
-//                .withUser("member")
-////                .password("{noop}1234")
-//                .password("46e39f78-324c-4e76-a73b-4341ed70ce74")
-//                .roles("MEMBER"); // ROLE_MEMBER
     }
+
+    // 접근 제한 무시 경로 설정 – resource
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+//        해당 경로들은 보안검사 무시
+        web.ignoring().antMatchers("/assets/**", "/*", "/api/member/**");
+    }
+
+
     // 문자셋 필터
     public CharacterEncodingFilter encodingFilter() {
         CharacterEncodingFilter encodingFilter = new CharacterEncodingFilter();
