@@ -1,4 +1,5 @@
-import api from 'axios';
+// import api from 'axios';
+import api from '@/api';
 
 const BASE_URL = '/api/member';
 const headers = { 'Content-Type': 'multipart/form-data' };
@@ -16,6 +17,7 @@ export default {
         formData.append('username', member.username);
         formData.append('email', member.email);
         formData.append('password', member.password);
+
         if (member.avatar) {
             formData.append('avatar', member.avatar);
         }
@@ -23,6 +25,25 @@ export default {
         // 회원 가입 요청을 api에 보내고 응답 데이터를 반환
         const { data } = await api.post(BASE_URL, formData, headers);
         console.log('AUTH POST: ', data);
+        return data;
+    },
+    async update(member) {
+        const formData = new FormData();
+        formData.append('username', member.username);
+        formData.append('password', member.password);
+        formData.append('email', member.email);
+
+        if (member.avatar) {
+            formData.append('avatar', member.avatar);
+        }
+
+        const { data } = await api.put(`${BASE_URL}/${member.username}`, formData, headers);
+        console.log('AUTH PUT: ', data);
+        return data;
+    },
+    async changePassword(formData) {
+        const { data } = await api.put(`${BASE_URL}/${formData.username}/changepassword`, formData);
+        console.log('AUTH PUT: ', data);
         return data;
     },
 };
