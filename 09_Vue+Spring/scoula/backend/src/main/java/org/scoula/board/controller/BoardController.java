@@ -5,6 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.scoula.board.domain.BoardAttachmentVO;
 import org.scoula.board.dto.BoardDTO;
 import org.scoula.board.service.BoardService;
+import org.scoula.common.pagination.Page;
+import org.scoula.common.pagination.PageRequest;
 import org.scoula.common.util.UploadFiles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -23,11 +25,11 @@ public class BoardController {
     private final BoardService service;
 
     @GetMapping("")
-//    http://localhost:8080/api/board
-    public ResponseEntity<List<BoardDTO>> getList() {
-        //상태 코드가 200이고 body 타입이 list 인 응답 객체를 리턴
-        return ResponseEntity.ok(service.getList());
+    public ResponseEntity<Page> getList(PageRequest pageRequest) {
+        return ResponseEntity.ok(service.getPage(pageRequest));
     }
+
+  
 //    http://localhost:8080/api/board/9
     @GetMapping("/{no}")
     public ResponseEntity<BoardDTO> get(@PathVariable Long no) {
